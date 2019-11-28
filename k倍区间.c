@@ -26,9 +26,10 @@ Ai+1, ... Aj(i <= j)之和是K的倍数，我
 */ 
 #include <stdio.h>
 int main(){
-	int n,k,i,r,t,l,a[100000],sum,count = 0;
+	int n,k,i,r,t,l,sum,count = 0;
 	scanf("%d",&n);
 	scanf("%d",&k);
+	int *a = (int*)malloc(n * sizeof(4)); 
 	for(i = 0;i < n;i++){
 		scanf("%d",&a[i]);
 	}

@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 int main(){
-	char a[1000000] = {'\0'};
+	
 	int n,m,i,l,t;
 	scanf("%d%d",&n,&m);
+	char *a = (char*)malloc((m + 1) * n * sizeof('a'));
 	for(i = 0;i < ((m+1)*n);i++){
 		scanf("%c",&a[i]);
 	}
 	scanf("%d",&l);
-	for(t = 0;t < l;t++){
+	while(l > 0){
 		for(i = 0;i < ((m+1)*n);i++){
 			if(a[i] == 'g'){
 				if((a[i+1] != '\n') && (a[i+1] != 'g') &&(i + 1 <100000)){
@@ -29,6 +31,7 @@ int main(){
 					a[i] = 'g';
 				}
 			}
+		l--;
 	}
 	for(i = 0;i < ((m+1)*n);i++){
 		printf("%c",a[i]);

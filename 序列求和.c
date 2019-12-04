@@ -1,11 +1,13 @@
 #include <stdio.h>
 int main(){
-	 long long int n,m = 0,i = 0;
+	 long long int n;
 
 	scanf("%I64d",&n);
-	for(;i<=n;i++){
-		m += i;
+	if(n % 2 == 0){
+		n = (n + 1) * n / 2;
+	} else{
+		n = n  * (n - 1) / 2 + n;
 	}
-	printf("%I64d",m);
+	printf("%I64d",n);
 	return 0;
 }

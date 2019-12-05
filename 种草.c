@@ -2,6 +2,7 @@
 #include <stdlib.h>
 int main(){
 	
+	
 	int n,m,i,l,t;
 	scanf("%d%d",&n,&m);
 	char *a = (char*)malloc((m + 1) * n * sizeof('a'));

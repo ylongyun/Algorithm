@@ -24,9 +24,10 @@
 
 */ 
 #include <stdio.h>
+#include <stdlib.h>
 int main(){
 	void fun(int l,int r,int k,int a[]);
-	int i,a[100],n,m,b[300];
+	int i,a[1000],n,m,b[3000];
 	scanf("%d",&n);
 	for(i = 0;i < n;i++){
 		scanf("%d",&a[i]);
@@ -35,26 +36,33 @@ int main(){
 	for(i = 0;i < (3 * m);i++){
 		scanf("%d",&b[i]);
 	}
-	for(i = 0;i < (3 * m);i += 3){
+	i = 0;
+	fun(b[i],b[i+1],b[i+2],a);
+	for(i = 3;i < (3 * m);i += 3){
+		printf("\n");
 		fun(b[i],b[i+1],b[i+2],a);
 	}
+	return 0;
 } 
 void fun(int l,int r,int k,int *a){
-	int c[100],i,d,n,m,t;
+	int c[1000],i,d,n,m,t;
 	d = r - l + 1;
-	if(k <= d){
-		for(i = 0;i < d;i++){
+	for(i = 0;i < d;i++){
 			c[i] = a[i + l - 1];
 		}
-		for(i = 0;i < k;i++){
-			n = i;
-			for(m = i + 1;m < d;m++){
-				if(c[i] < c[m])
+	for(i = 0;i < d-1;i++){
+		n = i;
+		for(m = n+1;m < d;m++){
+			if(c[n] < c[m]){
 				n = m;
 			}
-			if(i != n){
-				t = c[i];
-				c[i] = c[n];
-				c[n] = t;
-			}
-
+		}
+		if(i != n){
+			t = c[i];
+			c[i] = c[n];
+			c[n] = t;
+		}
+	}
+			printf("%d",c[k-1]);	
+		
+}

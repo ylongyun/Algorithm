@@ -22,7 +22,6 @@ int main(){
 		b[j-n-1] = b[n];
 		b[n]= t;
 	} 
-	
 	if(i > j){
 		m = j;
 		for(j = 0;j < m;j++){

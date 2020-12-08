@@ -26,10 +26,11 @@ int main(){
 	double a = 1,b = -1;
 	int c = 0;
 	while(b != c){
+		a++;
 		b = (a * 127 + 1) / 97;
 		c = (int)b;
-		a++;
+		
 	}
-	printf("%f\n%f",b,a-1);
+	printf("%f\n%f",b,a);
 	return 0;
 }

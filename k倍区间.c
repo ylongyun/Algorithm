@@ -25,6 +25,7 @@ Ai+1, ... Aj(i <= j)之和是K的倍数，我
  
 */ 
 #include <stdio.h>
+#include <stdlib.h>
 int main(){
 	int n,k,i,r,t,l,sum,count = 0;
 	scanf("%d",&n);
